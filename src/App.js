@@ -1,35 +1,45 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import StartButton from './StartButton.js';
+import GameContainer from './GameContainer.js';
 import SelectColors from './SelectColors.js';
-import Dropdown from './test.js';
 
 class App extends Component {
 
   constructor(){
     super();
     this.state = { 
-        colors: ["red", "blue", "green", "black", "white", "yellow", "orange"],
+        colors: ["red", "blue", "green", "yellow", "orange"],
     };
-    //this.showCurrentTodo = this.showCurrentTodo.bind(this);
+ 
+
 }
   render() {
     
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
+          <h1 className="App-title">MasterMind</h1>
         </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-        <div>{this.state.colors}</div>
+        <br />
+
+        <GameContainer /> <br />
+
+         <div>Select Colors: </div>
+        <span className='redDot'></span>
+        <span className='blueDot'></span>
+        <span className='greenDot'></span>
+        <span className='yellowDot'></span>
+        <span className='orangeDot'></span>
+        <br />
+
+        <StartButton colors={this.state.colors} />
 
         <SelectColors />
 
-        <StartButton colors={this.state.colors} />
+
+       
+
    
         
       </div>

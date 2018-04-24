@@ -18,53 +18,48 @@ export default class StartButton extends React.Component{
     componentDidMount(){
     }
 
-
    getRandomInt(max) {
     return Math.floor(Math.random() * Math.floor(max));
    }
 
-
    generateRandom = () => {
        var colors = this.props.colors;
        var solutionArr = [
-                            colors[this.getRandomInt(6)],
-                            colors[this.getRandomInt(6)],
-                            colors[this.getRandomInt(6)],
-                            colors[this.getRandomInt(6)],
-                            colors[this.getRandomInt(6)],
-                            colors[this.getRandomInt(6)],
-                            colors[this.getRandomInt(6)]
+                            colors[this.getRandomInt(4)],
+                            colors[this.getRandomInt(4)],
+                            colors[this.getRandomInt(4)],
+                            colors[this.getRandomInt(4)]
                         ]
 
     console.log(solutionArr);
     this.setState({colorArray: solutionArr}) 
 
+    this.createHTML(solutionArr)
+
    }
 
-
-   createHTML(){
-    
-    let array = ["red", "blue", "green", "red"]; //this.state.colorArray;
+   createHTML(solutionArr){
+    let array = solutionArr;
     let html = '<div>';
     for (var i = 0; i < array.length; i++){
         if (array[i] === "red"){
-            html += '<span className="redDot"></span>'
+            html += '<span class="redDot"></span>'
         } else if (array[i] === "blue"){
-            html += '<span className="blueDot"></span>'
+            html += '<span class="blueDot"></span>'
         } else if (array[i] === "green"){
-            html += '<span className="greenDot"></span>'
+            html += '<span class="greenDot"></span>'
+        } else if (array[i] === "orange"){
+        html += '<span class="orangeDot"></span>'
+       } else if (array[i] === "yellow"){
+        html += '<span class="yellowDot"></span>'
       }
     }
 
     html += '</div>'
     console.log("html", html);
-
-    let thisIsMyCopy = (html)
     document.getElementById('colorList').innerHTML = html;
     
      //$('#colorList').html('<span className="redDot"></span>');
-
-     return thisIsMyCopy
 
    }
 
@@ -74,19 +69,10 @@ export default class StartButton extends React.Component{
   
     return (
         <React.Fragment>
-            <div>{this.state.colors}</div>
-            <button onClick={this.generateRandom}> Start Game </button> 
-            <div id="colors"> Colors </div> 
-            <span className='redDot'></span>
-            <span className='blueDot'></span>
-            <span className='greenDot'></span>
-            <span className='yellowDot'></span>
-            <span className='whiteDot'></span>
+            <button onClick={this.generateRandom}> Start Game </button>
+            <br /> <br />
             <div id="colorList">{this.createHTML}</div> 
-
-
             <CheckButton solutionArr={this.state.colorArray}/>
-
         </ React.Fragment>
         );
     }
