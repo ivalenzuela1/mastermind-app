@@ -1,4 +1,5 @@
 import React from 'react';
+import BuildTable from './BuildTable.js';
 
 export default class GameContainer extends React.Component{
     constructor(props){
@@ -13,12 +14,13 @@ export default class GameContainer extends React.Component{
     }
 
 componentDidMount(){
-    this.createTable()
+
 }
 
 selectColor(){
     console.log("testtttttttting");
 }
+
 
 createTable = () => {
 
@@ -28,23 +30,19 @@ createTable = () => {
 
     for (var i = 0; i < 5; i++){
         html += `<tr id='row${i}'>
-                     <td class='emptyDot' id='row${i}_1' onclick='this.selectColor'></td>
-                     <td class='emptyDot' id='row${i}_2'></td>
-                     <td class='emptyDot' id='row${i}_3'></td>
-                     <td class='emptyDot' id='row${i}_4'></td>
-                     <td class='emptySquare' id='feedback_${i}'></td>
+                    <td class='emptyDot' id='row${i}_1' onclick='this.selectColor'></td>
+                    <td class='emptyDot' id='row${i}_2'></td>
+                    <td class='emptyDot' id='row${i}_3'></td>
+                    <td class='emptyDot' id='row${i}_4'></td>
+                    <td class='emptySquare' id='feedback_${i}'></td>
                  </tr>`
-    }
+}
       
 
     html +=  '</tbody>';
     html +=  '</table><br>';
 
-
-
     document.getElementById('thisTable').innerHTML = html;
-
-
 
 }
 
@@ -53,10 +51,15 @@ createTable = () => {
     return (
        <React.Fragment>
 
-           <div id='thisTable'></div>
+           <div id='myTable'>
+                    <BuildTable />
+            </div>
+           
 
         </ React.Fragment>
       );
    }
 
 }
+
+//<div id='thisTable'></div>

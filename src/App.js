@@ -33,9 +33,11 @@ class App extends Component {
         <span className='orangeDot'></span>
         <br />
 
+        <SelectColors /> <br />
+
         <StartButton colors={this.state.colors} />
 
-        <SelectColors />
+        
 
 
        

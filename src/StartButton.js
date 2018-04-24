@@ -58,8 +58,6 @@ export default class StartButton extends React.Component{
     html += '</div>'
     console.log("html", html);
     document.getElementById('colorList').innerHTML = html;
-    
-     //$('#colorList').html('<span className="redDot"></span>');
 
    }
 
