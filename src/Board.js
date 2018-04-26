@@ -1,22 +1,19 @@
 import React from 'react';
 import SingleRow from './SingleRow.js';
+import CheckBoard from './CheckBoard.js';
 
-export default class BuildTable extends React.Component{
+export default class Board extends React.Component{
     constructor(props){
         super(props);
         this.state = { 
             colorArray: []
         };
-
-        this.selectColor = this.selectColor.bind(this);
     }
 
 componentDidMount(){
 }
 
-selectColor(){
-    console.log("testtttttttting");
-}
+
 
 myFunction(id) {
 
@@ -30,12 +27,19 @@ myFunction(id) {
     let rows = [];
     let rounds  = 6;
     for (let i = 0; i < rounds; i++){
-        rows.push( <SingleRow key={i}/>)
+        rows.push( <div><SingleRow key={i} 
+                         selectedColor={this.props.selectedColor} 
+                         currentGuess={this.props.currentGuess}
+                    />
+                    <div className='checkBoard'><CheckBoard /></div>
+                    </div>
+                )
     }
     
     return (
        <React.Fragment>
           <div>{rows}</div>
+          
         <br />
            
 

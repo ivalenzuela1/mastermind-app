@@ -3,16 +3,42 @@
 
 #myTable{
   border-style: groove;
-  width: 250px;
-  height: 300px;
-  /* -ms-flex-align: center; */
-  align-items: center;
+  width: 200px;
+  height: 250px;
+  /* -ms-flex-align: center; 
+  align-items: center; */
   margin-left: 200px;
 }
+
+.checkBoard{
+    border-style: groove;
+    width: 52px;
+    height: 14px;
+    background-color: rgb(173, 115, 99);
+    position: fixed;
+    left: 342px;
+    margin-top: -33px;
+}
+
 
 
 tr {
   height: 10px;
+}
+
+.colorContainer{
+  border-style: groove;
+  width: 200px;
+  left: 200px;
+  position: absolute;
+  text-align: center;
+}
+
+.buttonContainer{
+  position: fixed;
+  left: 200px;
+  top: 400px;
+ 
 }
 
 /* FEEDBACK */
@@ -33,7 +59,6 @@ tr {
   background-color:red;
   border-radius: 50%;
   display: inline-block;
-  margin:10px;
 }
 
 .whiteFeedback {
@@ -42,7 +67,6 @@ tr {
   background-color:white;
   border-radius: 50%;
   display: inline-block;
-  margin:10px;
 }
 
 /* CIRCLES  */
@@ -55,7 +79,7 @@ tr {
   border-radius: 50%;
   border-style: groove;
   display: inline-block;
-  margin:3px;
+  margin:1px;
 }
 
 
@@ -64,8 +88,9 @@ tr {
   width: 25px;
   background-color:red;
   border-radius: 50%;
+  border-style: groove;
   display: inline-block;
-  margin:10px;
+  margin:1px;
 }
 
 .greenDot {
@@ -73,8 +98,9 @@ tr {
   width: 25px;
   background-color:green;
   border-radius: 50%;
+  border-style: groove;
   display: inline-block;
-  margin:10px;
+  margin:1px;
 }
 
 .yellowDot {
@@ -82,8 +108,9 @@ tr {
   width: 25px;
   background-color:yellow;
   border-radius: 50%;
+  border-style: groove;
   display: inline-block;
-  margin:10px;
+  margin:1px;
 }
 
 .whiteDot {
@@ -91,8 +118,9 @@ tr {
   width: 25px;
   background-color:white;
   border-radius: 50%;
+  border-style: groove;
   display: inline-block;
-  margin:10px;
+  margin:1px;
 }
 
 .blueDot {
@@ -100,8 +128,9 @@ tr {
   width: 25px;
   background-color:blue;
   border-radius: 50%;
+  border-style: groove;
   display: inline-block;
-  margin:10px;
+  margin:1px;
 }
 
 .orangeDot {
@@ -109,12 +138,9 @@ tr {
   width: 25px;
   background-color:orange;
   border-radius: 50%;
+  border-style: groove;
   display: inline-block;
-  margin:10px;
-}
-
-.App {
-  text-align: center;
+  margin:1px;
 }
 
 .App-header {
@@ -126,50 +152,12 @@ tr {
 
 .App-title {
   font-size: 1.5em;
+  text-align: center;
 }
 
 .App-intro {
   font-size: large;
+  text-align: center;
 }
 
 
-/* DROPDOWN TEST */
-
-.dropbtn {
-  background-color: #3498DB;
-  color: white;
-  padding: 16px;
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
-}
-
-.dropbtn:hover, .dropbtn:focus {
-  background-color: #2980B9;
-}
-
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f1f1f1;
-  min-width: 160px;
-  overflow: auto;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
-
-.dropdown a:hover {background-color: #ddd}
-
-.show {display:block;}

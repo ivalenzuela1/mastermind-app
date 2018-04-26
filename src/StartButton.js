@@ -16,6 +16,7 @@ export default class StartButton extends React.Component{
 
     }
     componentDidMount(){
+
     }
 
    getRandomInt(max) {
@@ -67,10 +68,14 @@ export default class StartButton extends React.Component{
   
     return (
         <React.Fragment>
-            <button onClick={this.generateRandom}> Start Game </button>
-            <br /> <br />
-            <div id="colorList">{this.createHTML}</div> 
-            <CheckButton solutionArr={this.state.colorArray}/>
+            <div className ='buttonContainer'>
+            <button onClick={this.generateRandom}> Start Game </button><br />
+            <div>{JSON.stringify(this.props.solutionArr)}</div> <br />
+            <div id="colorList">{this.createHTML}</div>
+            <CheckButton solutionArr={this.state.colorArray}/> 
+            </ div>
+
+            
         </ React.Fragment>
         );
     }
