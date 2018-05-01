@@ -6,7 +6,7 @@ export default class SingleRow extends React.Component{
     constructor(props){
         super(props);
         this.state = { 
-            colorArr: []
+            currentGuess: [null, null, null, null]
         };
 
         this.changeColor = this.changeColor.bind(this);
@@ -20,7 +20,11 @@ export default class SingleRow extends React.Component{
     setToBlue(){
         console.log("set this one to blue");
         document.getElementById('1').classList.add('blueDot');
+    }
 
+    setToRed(){
+        console.log("set this one to red");
+        document.getElementById('1').classList.add('redDot');
     }
 
     changeColor(){
@@ -39,26 +43,17 @@ export default class SingleRow extends React.Component{
     }
 
    render() { 
-       
-
       let circles = [];
-      let guessArr = this.props.currentGuess;
-      console.log("guess", guessArr);
-      for (let i = 0; i < guessArr.length; i++){
-          console.log("test");
+      for (let i = 0; i < 4; i++){
           let id = (new Date()).getTime() + i;
-          if (guessArr[i] == 'blue'){
-             circles.push(<div id={i} onClick={this.setToBlue}></div>)
-          } else if (guessArr[i] == 'red'){
-            circles.push(<div className='redDot' id={id}></div>)
-          } else if (guessArr[i] == 'green'){
-            circles.push(<div className='greenDot' id={id}></div>)
-
-          } else {
-            circles.push(<div className='emptyDot' id={id}></div>)
-          }
-          
-      }
+          if (this.props.selectedColor === "red"){
+             circles.push(<div id={i} className='emptyDot' onClick={this.setToRed}></div>)
+          } else if (this.props.selectedColor === "blue"){
+            circles.push(<div id={i} className='emptyDot' onClick={this.setToBlue}></div>)
+         } else {
+            circles.push(<div id={i} className='emptyDot'></div>)
+         }
+    }
       
     return (
        

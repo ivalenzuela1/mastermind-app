@@ -11,18 +11,19 @@ class App extends Component {
     this.state = { 
         colors: ['red','blue', 'yellow', 'green', 'orange'],
         selectedColor: '',
-        currentGuess: [null, null, null, null]
+        round: 1
     };
     this.selectColor = this.selectColor.bind(this);
 }
+
 
 selectColor(color, row, index){
       this.setState({selectedColor: color});
       this.state.currentGuess[0] = color;
 }
 
+
   render() {
-    
     return (
       <div className="App">
         <header className="App-header">
@@ -31,13 +32,12 @@ selectColor(color, row, index){
         <br />
 
        <div id='myTable'>
-         <Board selectedColor= {this.state.selectedColor} currentGuess={this.state.currentGuess} />
+         <Board selectedColor= {this.state.selectedColor} />
        </div>
 
         <ColorList selectColor={this.selectColor}/>
         <StartButton colors={this.state.colors} />
 
-        
       </div>
 
     );

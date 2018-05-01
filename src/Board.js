@@ -20,7 +20,6 @@ myFunction(id) {
     console.log(id);
     //document.getElementById("myDropdown1").classList.toggle("show");
 
-
    }
 
  render() {
@@ -39,8 +38,7 @@ myFunction(id) {
     return (
        <React.Fragment>
           <div>{rows}</div>
-          
-        <br />
+          <br />
            
 
         </ React.Fragment>
